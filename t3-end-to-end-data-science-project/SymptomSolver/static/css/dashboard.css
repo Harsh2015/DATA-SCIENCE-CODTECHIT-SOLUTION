@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Parkinsans:wght@300..800&display=swap');
+
+/* General Styles */
+body {
+  font-family: 'Lato', sans-serif;
+  display: flex; /* Use flexbox to manage layout */
+  flex-direction: column; /* Stack elements vertically */
+  min-height: 100vh; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f6fa;
+  color: #333;
+}
+
+.main-content {
+  flex: 1; /* Allow the content to take available space */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 20px;
+  background-color: black;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-logo {
+  width: 45px;
+  height: 45px;
+  margin-right: 12px;
+}
+
+.navbar-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.header-logo {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 15px;
+  color: #333;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f7f7f7;
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Navigation Bar Styles */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #1674d2;
+}
+
+nav ul {
+  list-style: none;
+  padding: 15px 30px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f0f0f0;
+}
+
+/* Container Styles */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 15px;
+}
+
+/* Prediction Section Styles */
+.prediction-section {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Symptom Input Styles */
+.symptom-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.symptom-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.symptom-row label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.symptom-row select,
+.symptom-row input[type="text"] {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.symptom-row select:focus,
+.symptom-row input[type="text"]:focus {
+  border-color: #1674d2;
+  box-shadow: 0 0 5px rgba(22, 116, 210, 0.5);
+  outline: none;
+}
+
+/* General Button Styles */
+.submit-button {
+  background-color: #1674d2;  /* Blue background */
+  color: white;  /* White text */
+  border: none;  /* No border */
+  padding: 15px 30px;  /* Adequate padding */
+  border-radius: 8px;  /* Rounded corners */
+  cursor: pointer;  /* Pointer cursor */
+  font-size: 18px;  /* Larger font size */
+  font-weight: bold;  /* Bold text */
+  text-transform: uppercase;  /* Uppercase text */
+  transition: background-color 0.3s ease, transform 0.2s ease;  /* Smooth transition */
+  width: auto;  /* Width based on content */
+  display: block;  /* Block-level element */
+  margin: 30px auto;  /* Center the button horizontally */
+}
+
+/* Button Hover Effect */
+.submit-button:hover {
+  background-color: #145bb5;  /* Darker blue on hover */
+  transform: scale(1.05);  /* Slight zoom effect */
+}
+
+
+/* Results Section Styles */
+.results {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fef4f4;
+  border: 1px solid #ffdcdc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.results .result-message {
+  color: #333;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333;  /* Dark background for footer */
+  color: white;  /* White text */
+  text-align: center;  /* Center the text */
+  padding: 20px 0;  /* Add padding around the text */
+    /* Fix the footer to the bottom */
+  bottom: 0;  /* Stick to the bottom */
+  left: 0;  /* Ensure it spans full width on the left */
+  right: 0;  /* Ensure it spans full width on the right */
+  width: 100%;  /* Full width */
+  z-index: 1000;  /* Make sure footer is on top of other content */
+}
+
+.footer-content p {
+  font-size: 16px;  /* Font size */
+  margin: 0;  /* Remove margin */
+}
+
+/* Adjustments for mobile */
+@media (max-width: 500px) {
+  .footer {
+    padding: 15px 0;  /* Reduce padding on mobile */
+    font-size: 14px;  /* Slightly smaller text for mobile */
+  }
+}
+
+
+/* Label Styling */
+label {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+/* Dropdown Styling */
+select {
+    padding: 8px 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+    max-width: 300px;
+}
+
+select:focus {
+    border-color: #007BFF;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    display: block;
+    max-width: 300px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Antibiotics Result Section */
+#antibiotics-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#antibiotics-table .detail {
+  font-weight: bold;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Heading */
+h3 {
+    font-size: 1.5em;
+    color: #007BFF;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+.centered-container {
+  display: flex;
+  flex-direction: column; /* Aligns elements vertically */
+  justify-content: center; /* Vertically centers the content */
+  align-items: center; /* Horizontally centers the content */
+  height: 100vh; /* Makes the container take full height of the viewport */
+  text-align: center; /* Centers the text inside the container */
+}
+
+select, label {
+  margin: 10px 0; /* Adds some spacing between the label and the select box */
+}
+
+
+/* Style for the note message below the header */
+.note-message {
+  background-color: #f8f9fa; /* Light background color */
+  color: black; /* Dark text color */
+  text-align: center; /* Center the text */
+  padding: 10px 0; /* Add padding for spacing */
+  font-size: 1.2em; /* Set the font size */
+  font-weight: bold; /* Make the text bold */ /* Optional: Add a subtle border above the note */
+  margin-top: 10px; /* Add margin to separate it from the header */
+}
+
+
+/* Make the font size smaller on small screens */
+@media (max-width: 480px) {
+  .note-message {
+    font-size: 2em; /* Smaller font size on small screens */
+    padding: 8px 0; /* Adjust padding for small screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .note-message {
+    font-size: 0.9em; /* Slightly smaller font size for medium screens */
+    margin-top: 60px;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    select, button {
+        font-size: 0.9em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 8px 10px;
+    }
+.footer{
+
+  padding: 15px 0;  /* Reduce padding on mobile */
+  font-size: 14px;  /* Slightly smaller text for mobile */
+}
+
+}
+
+@media (max-width: 480px) {
+  h3 {
+      font-size: 1.2em;
+  }
+
+  table {
+      display: block;
+      overflow-x: auto;
+      white-space: normal; /* Allow text to wrap instead of being on one line */
+      word-wrap: break-word; /* Break long words to prevent overflow */
+  }
+
+  th, td {
+      font-size: 1em; /* Adjust font size */
+      padding: 12px 15px; /* Increased padding for better spacing */
+      word-wrap: break-word; /* Break long words */
+      white-space: normal; /* Allow text to wrap within cells */
+  }
+
+  button, select {
+      width: 100%;
+  }
+}
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .navbar-title {
+    font-size: 22px; /* Slightly smaller on tablets */
+  }
+
+  .symptom-row {
+    grid-template-columns: 1fr 1fr; /* Allow two columns, but make them adjust based on screen size */
+  }
+
+  .submit-button {
+    width: 100%;
+    font-size: 18px;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjusting layout for tablets */
+  .symptom-row {
+    grid-template-columns: 1fr; /* Stack the input fields in a single column */
+    gap: 20px; /* Adding some space between the fields */
+  }
+
+
+  .header {
+    position: fixed; /* Make header stick to the top */
+    top: 0; /* Ensure it stays at the top */
+    left: 0; /* Ensure it aligns to the left */
+    right: 0; /* Ensure it aligns to the right */
+    z-index: 1000; /* Place it on top of other content */
+    background-color: black; /* Add background color to avoid content overlap */
+    padding-top: 0; /* Remove extra padding on top */
+    padding-bottom: 0; /* Optional: Adjust bottom padding if needed */
+  }
+
+  .content {
+    margin-top: 60px; /* Adjust this value depending on the height of your header */
+  }
+
+
+
+  .submit-button {
+    width: 100%;
+    font-size: 18px;
+    padding: 12px 25px;
+    text-align: center;
+  }
+
+  .navbar-title {
+    font-size: 18px; /* Reduce font size for smaller screens */
+  }
+
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-brand {
+    justify-content: center; /* Center navbar on small screens */
+  }
+}
+
+@media (max-width: 500px) {
+  /* Mobile phone screen adjustments */
+  .symptom-row {
+    grid-template-columns: 1fr; /* Stack the input fields vertically */
+    gap: 15px;
+  }
+
+  .submit-button {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .navbar-title {
+    font-size: 16px; /* Even smaller font for very small screens */
+  }
+
+  .prediction-section {
+    padding: 15px; /* Adjust padding to avoid content squishing */
+  }
+
+  .navbar-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .navbar-brand {
+    height: auto; /* Ensure proper space for mobile version */
+  }
+
+  .footer {
+    padding: 15px 0; /* Reduce footer padding on mobile */
+  }
+
+  .footer-content p {
+    font-size: 14px; /* Smaller text for mobile */
+  }
+}
+
